@@ -75,7 +75,7 @@ local function Constructor()
                 return
             end 
         end 
-    end)
+    end, false)
 
     addEventHandler("better-browsers:page-loaded", Browser, function()
         browserLoaded = true
@@ -84,7 +84,7 @@ local function Constructor()
             executeBrowserJavascript(Browser, js)
         end 
         toLoadBrowsers  = {}
-    end)
+    end, false)
 
     addEventHandler("onClientElementDestroy", root, function()
         if getElementType(source) == "better-browser" and browsers[source] and isElement(Browser) then 
